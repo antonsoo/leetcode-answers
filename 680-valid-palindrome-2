@@ -23,7 +23,7 @@ class Solution:
             left_p += 1
             right_p -= 1
         return True
-    def isPali(self, s): # why is this much faster on LeetCode??
+    def isPali(self, s): # this is actually faster because string reversal is implemented in C unlike my for loop above
         # O(n) time and space (O(n) time for slicing and O(n) time for comparing)
         return s == s[::-1]
     
