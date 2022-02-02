@@ -1,5 +1,5 @@
 """
-- Problem: Remove all duplicates from an array (in place) and return the number of unique integers there
+- Problem: Remove all duplicates (in place) from a SORTED array and return the number of unique integers there
 - Solution: Use two pointers, one pointer keep increasing until the number changes, then the second pointer will increase and 
 put the duplicate to one index over (to the second duplicate's place), and it will continue on from that first pointer.
 - Complexity: O(N) time, O(1) space
