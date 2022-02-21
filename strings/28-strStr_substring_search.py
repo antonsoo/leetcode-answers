@@ -6,7 +6,7 @@ class Solution:
         return haystack.find(needle)
     
     # sliding window approach, window length will be Nlen
-    # O(Hlen*Nlen) time (?), O(Hlen*Nlen) space (?)
+    # O(Hlen*Nlen) time (?), O(Nlen) space (?)
     def strStr2(self, haystack: str, needle: str) -> int:
         Hlen, Nlen = len(haystack), len(needle)
         if Nlen == 0: # either both are empty, or just the needle string
@@ -22,7 +22,7 @@ class Solution:
                 return i
         return -1 # no match was ever found
     
-    
+    #O(Hlen*Nlen) time, O(Nlen) space
     # shorter version of the above: # same runtime as above... which is pretty good. Second best after KMP but better memory than KMP.
     def strStr5(self, haystack: str, needle: str) -> int:
         Hlen, Nlen = len(haystack), len(needle)
