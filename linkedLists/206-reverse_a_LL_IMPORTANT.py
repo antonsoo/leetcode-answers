@@ -29,7 +29,30 @@ class Solution:
         return prevNode # return this since that's what we're modifying
     
     
-    def reverseList3(self, head: ListNode) -> ListNode:  #recursive: O(n) time, O(n) space
+    
+    #recursive would be O(n) time, O(n) space
+ 
+    
+    
+    # stack solution
+    # put everything onto the stack, make a new LL and append to it from the stack
+    def reverseList2(self, head: ListNode) -> ListNode:
+        stack = []
+        while (head != None):
+            stack.append(head)
+            head = head.next
+        reversedLL = ListNode() # output LL
+        prevhead = 0
+        while (len(stack) != 0):     
+            currhead = stack.pop()
+            reversedLL.head.next = currhead  # keep adding new nodes on the output LL
+            prevhead=currhead
+        return reversedLL
+    
+    
+    
+   
+    def reverseList3(self, head: ListNode) -> ListNode:  
         first = head
         if (not first) or (not first.next): 
             return first
@@ -47,19 +70,3 @@ class Solution:
 
         curr.next = prev
         return curr
-    
-    
-    # stack solution
-    # put everything onto the stack, make a new LL and append to it from the stack
-    def reverseList2(self, head: ListNode) -> ListNode:
-        stack = []
-        while (head != None):
-            stack.append(head)
-            head = head.next
-        reversedLL = ListNode()
-        prevhead = 0
-        while (len(stack) != 0):     
-            currhead = stack.pop()
-            reversedLL.head.next = currhead
-            prevhead=currhead
-        return reversedLL
