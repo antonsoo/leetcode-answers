@@ -13,7 +13,7 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    # recursive solution: O(N) time and space.
+    # recursive solution: O(N) time and space. I believe it's DFS
     def isSymmetric2(self, root: Optional[TreeNode]) -> bool:
         
         # validate if the nodes A and B are symmetrical/mirrors on each other's side
