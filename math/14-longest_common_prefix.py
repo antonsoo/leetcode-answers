@@ -5,7 +5,7 @@ class Solution:
         prefix = ""
         if len(strs) == 0: 
             return prefix
-        for i in range(len(min(strs))):
+        for i in range(len(min(strs))): # min will return the smallest lexigraphically value, so the first item if u order the list of strs
             curr_ch = strs[0][i] # initialize as the char in the first word each time
             # all() returns True if all bool values in that collection are True
             if all(word[i] == curr_ch for word in strs): # O(len(strs))
