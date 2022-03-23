@@ -7,12 +7,12 @@ class Solution:
     #If we use a list to store the factors, and just return the kth one, it would be even easier
     # O(n/2)->~O(n) time, O(1) space
     def kthFactor1(self, n: int, k: int) -> int:
-        for x in range(1, n // 2 + 1):
-            if n % x == 0:
+        for x in range(1, n // 2 + 1): # try all divisors up to the middle
+            if n % x == 0:  # if this number evenly divides it, it's a factor
                 k -= 1
-                if k == 0:
+                if k == 0: # we found our k-th factor
                     return x
-        return n if k == 1 else -1
+        return n if k == 1 else -1 # if we got here, our factor is either the number itself, or there is none 
     
     
     # heap solution: O(sqrt(N) * log(k)) time, O(min(k, sqrt(N))) space
