@@ -3,6 +3,8 @@
 zeros, lalter add all the zeros like this: arr += [0] * numZeros
 - this solution: keep track of the non-zero number's position, every time you see a zero number then switch it 
 with the last encountered non-zero number.
+- p won't move if the value is zero, i will just keep moving until it finds a non-zero value (if there is one)
+if it doesn't find a non-zero value, it will replace it with the zero at the p pointer (where the current zero is)
 """
 
 #  Do not return anything, modify nums in-place instead.
