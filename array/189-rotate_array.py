@@ -48,7 +48,11 @@ class Solution:
     
     
     
-    # O(n) time I believe. O(n) space?
+    # O(n) time I believe. O(n) space or less, it will actually be O(k) I think?
+    # very easy, at the same time (so we don't have to use temp variables), 
+    # 1)change the last part of the array (from k to the end) to instead of the start part of the array up to k.
+    # 2) change the first part of the array (up to k) to the end part of the array (from k to the array)
+    # the middle value(s) will be untouched
     def rotate3(self, nums: List[int], k: int) -> None:
         k %= len(nums)
         nums[k:], nums[:k] = nums[:-k], nums[-k:]
