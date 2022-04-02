@@ -6,7 +6,10 @@ Use the extend method of lists
 
 O(n + m) time, O(min(n, m)) space
 """
-    
+# 1) Count up the number of items in array1 and then array2, using counter (dictionaries) like arr1 = {'a': 2, ...}, arr2 = {'a': 3, ...}
+# 2) Go through their intersect of keys, using &
+# 3) Add the intersect to the output array by only taking the smallest/min number (value) between the two counters.
+
 import collections
 class Solution:
     def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:           
