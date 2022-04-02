@@ -4,6 +4,11 @@
 put the duplicate to one index over (to the second duplicate's place), and it will continue on from that first pointer.
 - Complexity: O(N) time, O(1) space
 """
+# This code won't actually remove all the duplicates. It will just do it enough for until you hit the end of the list at i.
+# so j will be left behind if there are duplicates. if there isn't any duplicates, i and j will both increment.
+# i will eventually hit the end. For example, start with [1, 1, 2, 2, 3] -> at the end [1, 2, 3, 3, 3]
+# j will at first be 0, and will stop after it can't replace any more numbers (in this case at index 2) so the total num
+#of unique number is j+1, or 3 in the example.
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
         if len(nums) <= 0: # edge case
