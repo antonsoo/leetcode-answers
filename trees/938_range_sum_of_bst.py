@@ -1,4 +1,5 @@
 # 938. Range Sum of BST - "Easy" - 2022Q2Facebook
+# O(N) time and space
 
 # Assuming low!=high ??
 
