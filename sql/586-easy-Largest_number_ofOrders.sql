@@ -2,8 +2,8 @@
 
 SELECT customer_number FROM Orders
 GROUP BY customer_number
-ORDER BY COUNT(*) DESC
-LIMIT 1;
+ORDER BY COUNT(*) DESC # yes you can ORDER BY a function...
+LIMIT 1;  # take the top 1, aka highest/max number of orders
 
 
 # my failed code: error for MySQL not supporting the subquery
