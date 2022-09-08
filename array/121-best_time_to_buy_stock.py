@@ -1,12 +1,12 @@
-""" 121 - Easy - Best Time to Buy and Sell Stock - 2022Q1: Amzn>FB>Blmbg/Msft
+""" 121 - Easy - LC75 - Best Time to Buy and Sell Stock - 2022Q1: Amzn>FB>Blmbg/Msft
 """
 
-import sys
+#import sys
 class Solution:   
     def maxProfit(self, prices: List[int]) -> int:
         # one pass solution: O(n) time, O(1) space
         # really easy: just keep track of the smallest price and largest profit so far.
-        minprice = float('inf') #sys.maxsize  #initialize as largest int
+        minprice = float('inf') # prices[0] also works... #sys.maxsize  #initialize as largest int
         maxprof = 0  # maximum profit, i.e., max positive difference
         for day in range(len(prices)): # prices of stocks per day... just numbers in an array
             curr_diff = prices[day] - minprice
