@@ -34,9 +34,11 @@ class Solution:
         directions = [(1, 0), (-1, 0), (0, 1), (0, -1)] # W, E, N, S 
         while len(queue) > 0:
             x, y = queue.pop()  # current = queue.pop() # current[0], current[1]  
+            # test the boundary condition for those current coordinates:
             if 0 <= x < x_len and 0 <= y < y_len \
                     and image[x][y] == orig_color and image[x][y] != color:
                 image[x][y] = color
+                # can also do this manually: Just append every neighbor to the queue.
                 neighbors = [(x + direct[0], y + direct[1]) for direct in directions]
                 queue.extend(neighbors)
         return image
