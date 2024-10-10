@@ -1,3 +1,23 @@
+# 2024 Oct solution:
+# note, it can possibly be optimized further by using a variable replacement method, thus saving space.
+class Solution:
+    def climbStairs(self, n: int) -> int:
+        if n == 1:
+            return 1
+        if n == 2:
+            return 2
+        
+        dict = {}
+        dict[0] = 1
+        dict[1] = 2
+        for i in range(2, n):
+            dict[i] = dict[i - 2] + dict[i - 1]
+        return dict[n - 1]
+        
+
+
+
+# 2022 solution:
 """ 70 - Climbing Stairs - 2022Q1: Amzn>>Expe>>Goog/Msft>etc
 """
 class Solution:
@@ -7,6 +27,7 @@ class Solution:
         # define the values you get as output per each type of input, construct the rest from them
         # these are the number of steps you go (output) from climbing a particular number of steps (input)
         self.memo = {1:1, 2:2}
+
     def climbStairs2(self, n: int) -> int:
         #is n in memo already?: 
         #if n in self.memo:
@@ -58,3 +79,5 @@ class Solution:
     # other methods: 
     # Binets method: O(logn) time, O(1) space
     # Fibonacci formula: O(logn) time, O(1) space
+
+
