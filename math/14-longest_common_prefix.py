@@ -1,3 +1,22 @@
+# Date: Sep 25, 2025
+# LC # 14. "Longest Common Prefix"
+# Problem Link: https://leetcode.com/problems/longest-common-prefix/
+# Solution Credit: LC user nick-named "Akbar"
+# Solution link: https://leetcode.com/problems/longest-common-prefix/solutions/3273176/python3-c-java-19-ms-beats-99-91
+class Solution:
+    def longestCommonPrefix(self, v: List[str]) -> str:
+        ans=""
+        v=sorted(v)
+        first=v[0]
+        last=v[-1]
+        for i in range(min(len(first),len(last))):
+            if(first[i]!=last[i]):
+                return ans
+            ans+=first[i]
+        return ans 
+
+##########################################################################OLD SOLUTION:
+########################################################################################
 #14 - Longest Common Prefix - Easy (I think it's Medium+) - Facebook>Apple>Amazon>Google
 class Solution:
     # O(len(strs))->O(n) time, O(max word len in strs)->O(m) space for the result
